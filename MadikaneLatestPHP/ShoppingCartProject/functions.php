@@ -80,22 +80,19 @@
 	//refresh the page (add new item), in other words the cart will always be empty if I don't put the ! sign 
 	//in this statement	
 	if (!isset( $_SESSION["cart"] ) ) $_SESSION["cart"] = array();
-
-
-	//when a user clicks add, I pass 'action' as a query string to the URL bar, so here I'm checking if this query string
-    //exists on the URL (it's important that I check if if it exist or not, if I don't, I will get a variable undifined error)
+			   
+    //when a user clicks add, I pass 'action' as a query string to the URL bar, so here I'm checking if this query string
+    //ikhona kwi URL (it's important that I check if if it exist or not, if I don't, I will get a variable undifined error)
     //if the query string exists in the URL, meaning the user has clicked the Add button, I call the addItem function
 	if (isset( $_GET["action"] ) and $_GET["action"] == "addItem") {
 		addItem();
 	}
 	//I don't need this code in this script will take it out. It should be on the page that displays cart details
 	elseif (isset( $_GET["action"]) and $_GET["action"] == "removeItem") {
-		//removeItem();
+		removeItem();
 	} elseif (isset( $_GET["action"]) and $_GET["action"] == "emptyCart"){
 	   emptyCart();
 	}
-			   
-    
 
 
 function addItem(){
@@ -131,7 +128,7 @@ function addItem(){
 		//I grab the price from the URL bar also
 		$price =  $_GET["price"];
 
-		//Stores Item Array Objects into the cart (the cart session is used as an array also)
+		//Stores Item Array Objects into the cart (note that the cart session is used as an array also)
 		//this is because the cart (session) is  gonna hold multiple values (Objects)
 			
 		if (!isset( $_SESSION["cart"][$itemId] ) ) {
@@ -166,7 +163,9 @@ function emptyCart(){
 
 
 function removeItem() {
- 	global $itemsArray;
+ global $itemsArray;
+
+
 
 	if (isset( $_GET["itemId"] )){
 	$itemId = (int)$_GET["itemId"];
@@ -180,6 +179,7 @@ function removeItem() {
 	$_SESSION["total"] = $_SESSION["total"]-$price;   //decrement current total price by the price recived from the URL
 }
 session_write_close();
+
 }
 
 
@@ -193,11 +193,12 @@ function displayCart(){
 	$totalPrice += $item->getPrice();
 	$imageUrl =	 "../".$item->getImageUrl();
 
+
 	$itemId = $item->getItemId()
 ?>
 	 <div class="cart-header">
 				
-				 	<a href = "?action=removeItem&itemId=<?php echo $item->getItemId()."&price=".$item->getPrice(); ?>">
+				 	<a href = "cart.php?action=removeItem&itemId=<?php echo $item->getItemId()."&price=".$item->getPrice(); ?>">
 						<div class="close1"></div>
 					</a>
 				 
@@ -300,9 +301,6 @@ function displayCart(){
 
 
 	}
-
-
-	
 
 ?>
 

@@ -136,7 +136,7 @@
 				
 				<!-- start header menu -->
 		<ul class="megamenu skyblue">
-			<li class="active grid"><a class="color1" href="index.html">Home</a></li>
+			<li class="active grid"><a class="color1" href="index.php">Home</a></li>
 			<li class="grid"><a href="">CATAGORIES</a></li>
 				<li class="grid"><a href="">GALLERY</a></li>
 			<li class="grid"><a href="about.html">ABOUT US</a></li>
@@ -145,9 +145,8 @@
 			  <div class="clearfix"></div>			   	
 	 </div>
 		 <div class="caption">
-		 <h1>FASHION AND CREATIVITY</h1>	 
-		 <p>Sed dapibus est a lorem dictum, id dignissim lacus fermentum. Nulla ut nibh in libero maximus pretium
-		 Nunc vulputate vel tellus ac elementum. Duis nec tincidunt dolor, ac dictum eros.</p>
+		 <h1>FASHION AND CREATIVITY</h1> 
+		 <p>Fashion is art and you are the canvas!</p>
 	     </div>
 </div>
 <!--header-->
@@ -158,9 +157,9 @@
 	 <div class="container">
 		 <div class="tabs-box">
 			<ul class="tabs-menu">
-				<li><a href="#tab1">All</a></li>
-				<li><a href="#tab2">Man</a></li>
-				<li><a href="#tab3">Woman</a></li>
+				<!-- <li><a href="#tab1">All</a></li>-->
+				<!-- <li><a href="#tab2">Man</a></li>-->
+				<!-- <li><a href="#tab3">Woman</a></li>-->
 			</ul>
 			<div class="clearfix"> </div>
 		 <div class="tab-grids">
@@ -201,23 +200,15 @@
 			 <ul>
 				 <li><a href="#">Home</a></li>
 				 <li><a href="about.html">About</a></li>
-				 <li><a href="blog.html">Blog</a></li>
-				 <li><a href="products.html">Top Seller</a></li>
-				 <li><a href="shop.html">New Models</a></li>
-				 <li><a href="404.html">Combos</a></li>
-				 <li><a href="products.html">Collection</a></li>
 				 <li><a href="contact.html">Contact</a></li>
 			 </ul>
 		 </div>
 		 <div class="ftr-list2">
 			 <ul>				 
-				 <li><a href="#">Combos</a></li>
-				 <li><a href="#">Trendy</a></li>
-				 <li><a href="#">Fashion</a></li>
-				 <li><a href="#">College</a></li>
-				 <li><a href="#">Party</a></li>
-				 <li><a href="#">Dress</a></li>
-				 <li><a href="#">Kurtas & kurtis</a></li>
+				<!-- <li><a href="#">Combos</a></li>-->
+				 <!--<li><a href="#">Trendy</a></li>-->
+				 <!-- <li><a href="#">Fashion</a></li>-->
+				 <!-- <li><a href="#">College</a></li> -->
 			 </ul>
 		 </div>
 		 <div class="clearfix"></div>
@@ -236,9 +227,9 @@
 <!--fotter//-->
 <div class="fotter-logo">
 	 <div class="container">
-	 <div class="ftr-logo"><h3><a href="index.html">NEW FASHIONS</a></h3></div>
+	 <div class="ftr-logo"><h3><a href="index.html">MOS WEAR</a></h3></div>
 	 <div class="ftr-info">
-	 <p>&copy; 2015 All Rights Reseverd Design by <a href="http://w3layouts.com/">W3layouts</a> </p>
+	 <p>&copy; 2016 All Rights Reseverd Design by APN GEEKS </p>
 	</div>
 	 <div class="clearfix"></div>
 	 </div>

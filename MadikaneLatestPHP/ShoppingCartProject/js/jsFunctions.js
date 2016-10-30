@@ -10,100 +10,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Mos Wear Shopping Cart" 
-
 		/>
 
 <!-- start menu -->
 <link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
 
 <!-- start menu -->
-<script language="javascript" src="User/functions.js"></script> 
 
 
 
 
 </head>
 <body>
-<?php
-   
-    require "User/loginScript.php";
-	require "functions.php";
-	
-?>
 <!--header-->
 <div class="header">
 	 <div class="container">
 	     <div class="main-header">
-			  	<div class="carting">
-					 
-					 
-					 		
-					 			<?php
-									if(isset($_SESSION["userId"]) && !empty($_SESSION["userId"])){
-
-										$userId = $_SESSION["userId"];
-
-										require_once "connect.php";
-										$query = "Select*  from  users where userId = ".$userId." ";
-						 				$rows = $conn->query($query);
-
-						 				$name = "";
-
-						 				foreach ($rows as $row){
-						 					$name = $row["firstName"];
-						 					echo "<a href='User/login.php?action=logout'  style ='font-weight:600;'>LOGOUT</a> ".$name;
-
-										}
-									}
-									else{
-										echo "<a href='User/login.php'>LOGIN</a>";
-									}
-								?>
-
-					 			
-					 		
-					 	
-					
-				</div>
+			  <div class="carting">
+				 <ul><li><a href="User/login.php">LOGIN</a></li></ul>
+				 </div>
 			 <div class="logo">
 				 <h3><a href="index.php">MOS Wear</a></h3>
-			  </div>	
-
-			    <?php
-					$loggedin = 0;
-                      					 
-					if(isset($_SESSION["userId"])){
-						$loggedin = 1;
-					    echo $_SESSION["userId"]; 
-						
-					}
-				 
-
-				// echo $_SESSION["cart"];
-				?>
-
-				<script type="text/javascript">
-					function hi(){
-						 var javaScriptVar = "<?php echo $loggedin; ?>";
-
-						 if(javaScriptVar>0){
-						 	 window.location="User/cart.php";
-						 }
-				         else{
-				         	alert("You need to login first!");
-				         }
-
-				        
-					}
-				   
-				</script>			  
-			 <div class="box_1" onclick="hi()">
-
-
-
-
-			  		
-			 	
+			  </div>			  
+			 <div class="box_1">	
+			 	<?php
+			 		require "functions.php";
+			 	?>
 			    <h3>
 						Total: 	R<?php    
 									if(isset($_SESSION["total"])){
@@ -137,8 +69,8 @@
 				<!-- start header menu -->
 		<ul class="megamenu skyblue">
 			<li class="active grid"><a class="color1" href="index.html">Home</a></li>
-			<li class="grid"><a href="">CATAGORIES</a></li>
-				<li class="grid"><a href="">GALLERY</a></li>
+			<li class="grid"><a href="about.html">CATAGORIES</a></li>
+				<li class="grid"><a href="about.html">GALLERY</a></li>
 			<li class="grid"><a href="about.html">ABOUT US</a></li>
 			<li class="grid"><a href="contact.html">CONTACT US</a></li>				
 		</ul> 			 
@@ -170,9 +102,9 @@
 				       displayItems();
 				       	//displayCart();
 				       if(isset($_GET["action"])){
-				       	  	if($_GET["action"] == "addItem"){
-				        		addItem();
-				        	}
+				       	  if($_GET["action"] == "addItem"){
+				        	addItem();
+				        }
 				       }
 					         
 				       
